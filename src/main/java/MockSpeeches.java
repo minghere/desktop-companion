@@ -12,7 +12,9 @@ public class MockSpeeches {
             "Cam on bau duc",
             "Tuyet doi dien anh",
             "Na na anh do mixi",
-            "Cho xin hop kho ga de"
+            "Cho xin hop kho ga de",
+            "E Nghia da o day",
+            "Anh tao gop gach xay truong"
     );
 
     // Used to randomly select a speech line.
