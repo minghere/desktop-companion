@@ -46,14 +46,14 @@ mvn javafx:run
 - Click the mascot to cycle to a random new state (excludes `THINKING` and the current state)
 - Drag the mascot anywhere on the screen
 - Screen bounds enforcement — the window cannot be dragged outside the visible screen
-- Console-based state switching via `ConsoleTest` (run separately from the JavaFX thread)
+- Console-based state switching via `app.ConsoleTest` (run separately from the JavaFX thread)
 - `Platform.runLater()` used for all JavaFX UI updates triggered from the console thread
 
 ---
 
 ## Current Limitations
 
-- Console test thread is commented out in `DisplayOnScreen` (can be re-enabled manually)
+- Console test thread is commented out in `app.DisplayOnScreen` (can be re-enabled manually)
 - No animations between state transitions
 - No speech bubbles or menu
 - No AI or database functionality
@@ -71,12 +71,12 @@ EmotionStates/
 └── src/
     ├── main/
     │   ├── java/
-    │   │   ├── DisplayOnScreen.java    # JavaFX Application entry point
-    │   │   ├── MascotState.java        # Enum of mascot states
-    │   │   ├── MascotRenderer.java     # Maps MascotState -> resource path
-    │   │   ├── MascotSwitch.java       # Holds current state and loads Image
-    │   │   ├── MascotDragHandler.java  # Mouse drag + screen bounds logic
-    │   │   └── ConsoleTest.java        # Console-based state switching
+    │   │   ├── app.DisplayOnScreen.java    # JavaFX Application entry point
+    │   │   ├── mascot.MascotState.java        # Enum of mascot states
+    │   │   ├── mascot.MascotRenderer.java     # Maps mascot.MascotState -> resource path
+    │   │   ├── mascot.MascotSwitch.java       # Holds current state and loads Image
+    │   │   ├── mascot.MascotDragHandler.java  # Mouse drag + screen bounds logic
+    │   │   └── app.ConsoleTest.java        # Console-based state switching
     │   └── resources/
     │       └── state_images/           # Mascot PNG images (one per state)
     └── test/

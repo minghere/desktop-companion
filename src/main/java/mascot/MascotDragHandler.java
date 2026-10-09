@@ -1,3 +1,5 @@
+package mascot;
+
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 

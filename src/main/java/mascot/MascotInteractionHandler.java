@@ -1,7 +1,11 @@
+package mascot;
+
 import javafx.animation.PauseTransition;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+import menu.RadialMenu;
+import speech.SpeechBubble;
 
 public class MascotInteractionHandler {
 

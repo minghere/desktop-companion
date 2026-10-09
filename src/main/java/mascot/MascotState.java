@@ -1,3 +1,5 @@
+package mascot;
+
 public enum MascotState {
     IDLE,
     HAPPY,

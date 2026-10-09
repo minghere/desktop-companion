@@ -1,3 +1,5 @@
+package speech;
+
 import javafx.animation.PauseTransition;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

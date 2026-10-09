@@ -1,3 +1,5 @@
+package app;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
@@ -7,6 +9,15 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.stage.StageStyle;
+
+import mascot.MascotDragHandler;
+import mascot.MascotInteractionHandler;
+import mascot.MascotSwitch;
+import menu.RadialMenu;
+import menu.RadialMenuItem;
+import menu.RadialMenuUI;
+import speech.MockSpeeches;
+import speech.SpeechBubble;
 
 import java.util.List;
 
@@ -140,7 +151,7 @@ public class DisplayOnScreen extends Application {
         // =========================================================
         // MASCOT INTERACTION
         // Delegates click and double-click behavior
-        // to MascotInteractionHandler.
+        // to mascot.MascotInteractionHandler.
         // =========================================================
 
         mascotInteractionHandler = new MascotInteractionHandler(imageView, mascotSwitch, radialMenu, speechBubble);
@@ -149,7 +160,7 @@ public class DisplayOnScreen extends Application {
 
         // =========================================================
         // MASCOT DRAGGING
-        // Delegates drag calculations to MascotDragHandler.
+        // Delegates drag calculations to mascot.MascotDragHandler.
         // The calculated coordinates are then applied
         // to the application Stage.
         // =========================================================
@@ -200,7 +211,7 @@ public class DisplayOnScreen extends Application {
         // =========================================================
 
         /*
-        ConsoleTest test = new ConsoleTest();
+        app.ConsoleTest test = new app.ConsoleTest();
 
         Thread consoleTest = new Thread(() -> {
             test.testFromKeyboard(

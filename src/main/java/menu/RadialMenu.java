@@ -1,3 +1,5 @@
+package menu;
+
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.layout.Background;

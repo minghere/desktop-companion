@@ -1,5 +1,9 @@
+package app;
+
 import javafx.application.Platform;
 import javafx.scene.image.ImageView;
+import mascot.MascotState;
+import mascot.MascotSwitch;
 
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package menu;
+
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
 
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ public class RadialMenuUI {
      * - Which icon each orb uses.
      * - Which text each orb displays.
      *
-     * RadialMenu itself is responsible for positioning these items.
+     * menu.RadialMenu itself is responsible for positioning these items.
      */
     public List<RadialMenuItem> createItems() {
 
@@ -37,9 +39,9 @@ public class RadialMenuUI {
         items.add(new RadialMenuItem(new RadialOrb(FontAwesomeSolid.INFO_CIRCLE, "Instruction")));
 
         /*
-         * Return all four items to RadialMenu.
+         * Return all four items to menu.RadialMenu.
          *
-         * RadialMenu will then decide where each item
+         * menu.RadialMenu will then decide where each item
          * should be positioned around the mascot.
          */
         return items;

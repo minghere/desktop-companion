@@ -1,3 +1,5 @@
+package mascot;
+
 import javafx.scene.image.Image;
 
 public class MascotSwitch {
