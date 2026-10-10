@@ -1,3 +1,5 @@
+package pomodoro;
+
 public enum PomodoroPhase {
     WORK("Time to focus!", 25 * 60),
     SHORT_BREAK("Take a quick break!", 5 * 60),

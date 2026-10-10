@@ -12,10 +12,14 @@ import javafx.stage.StageStyle;
 
 import mascot.MascotDragHandler;
 import mascot.MascotInteractionHandler;
+import mascot.MascotState;
 import mascot.MascotSwitch;
 import menu.RadialMenu;
 import menu.RadialMenuItem;
 import menu.RadialMenuUI;
+import pomodoro.PomodoroListener;
+import pomodoro.PomodoroManager;
+import pomodoro.PomodoroPhase;
 import speech.MockSpeeches;
 import speech.SpeechBubble;
 
