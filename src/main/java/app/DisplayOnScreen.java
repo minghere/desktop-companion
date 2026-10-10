@@ -139,7 +139,7 @@ public class DisplayOnScreen extends Application {
 
         RadialMenuUI radialMenuUI = new RadialMenuUI();
         RadialMenu radialMenu = new RadialMenu(imageView);
-        List<RadialMenuItem> rawOrbs = radialMenuUI.createItems();
+        List<RadialMenuItem> rawOrbs = radialMenuUI.createItems(pomodoroManager::toggle);
         for (RadialMenuItem r : rawOrbs) {
             radialMenu.addItem(r);
         }
@@ -224,6 +224,45 @@ public class DisplayOnScreen extends Application {
         */
     }
 
+    PomodoroManager pomodoroManager = new PomodoroManager(
+            new PomodoroListener() {
+                @Override
+                public void onTick(PomodoroPhase phase, int remainingSeconds, String formattedTime) {
+                    javafx.application.Platform.runLater(() -> {
+                        speechBubble.setText(formattedTime);
+                    });
+                }
+
+                @Override
+                public void onPhaseChange(PomodoroPhase newPhase, String announcement) {
+                    javafx.application.Platform.runLater(() -> {
+                        switch (newPhase) {
+                            case WORK -> {
+                                // Update mascot sprite & notify
+                                mascotSwitch.setMascotRender(MascotState.STUDYING); // or MascotSwitch.switchState if static
+                                speechBubble.setText(announcement + " (25m)");     // adjust to your SpeechBubble method
+                            }
+                            case SHORT_BREAK, LONG_BREAK -> {
+                                mascotSwitch.setMascotRender(MascotState.HAPPY);
+                                speechBubble.setText(announcement);
+                            }
+                            case STOPPED -> {
+                                mascotSwitch.setMascotRender(MascotState.IDLE);
+                                speechBubble.setText("Back to chill mode!");
+                            }
+                        }
+                    });
+                }
+
+                @Override
+                public void onComplete() {
+                    javafx.application.Platform.runLater(() -> {
+                        speechBubble.setText("All done! Fantastic work today!");
+                    });
+                }
+            }
+
+    );
 
     // Entry point of the JavaFX application.
     public static void main(String[] args) {

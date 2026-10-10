@@ -98,4 +98,13 @@ public class SpeechBubble extends StackPane {
         hideTimer.stop();
         setVisible(false);
     }
+
+    /**
+     * Thay doi chu trong speech bubble
+     * @param text
+     */
+    public void setText(String text) {
+        speechLabel.setText(text);
+        setVisible(true);
+    }
 }

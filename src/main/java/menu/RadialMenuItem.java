@@ -16,4 +16,7 @@ public class RadialMenuItem extends StackPane {
         // Put the provided graphic inside this menu item.
         getChildren().add(graphic);
     }
+    public void setOnAction(Runnable action) {
+        setOnMouseClicked(event -> action.run());
+    }
 }
